@@ -3,13 +3,13 @@ WORKDIR /app
 
 # Copy csproj and restore as distinct layers
 COPY Huxley2/*.csproj ./
-RUN dotnet restore --runtime alpine-x64
+RUN dotnet restore --runtime linux-musl-x64
 
 # Copy everything else and build
 COPY Huxley2/ ./
 RUN dotnet publish -c Release -o out \
   --no-restore \
-  --runtime alpine-x64 \
+  --runtime linux-musl-x64 \
   --self-contained true \
   /p:PublishTrimmed=true \
   /p:PublishSingleFile=true
