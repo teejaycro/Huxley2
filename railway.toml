@@ -1,7 +1,6 @@
 [build]
 builder = "dockerfile"
-dockerfilePath = "Huxley2/Dockerfile"
-buildContext = "Huxley2"
+dockerfilePath = "Dockerfile"
 
 [deploy]
 startCommand = "./Huxley2"
